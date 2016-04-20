@@ -1,0 +1,78 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 7
+  },
+  "data": {
+    "vehicle_crew_roles": {
+      "loader": "заряжающий",
+      "radioman": "радист",
+      "driver": "механик-водитель",
+      "gunner": "наводчик",
+      "commander": "командир экипажа"
+    },
+    "tanks_updated_at": 1459937172,
+    "languages": {
+      "ru": "Русский",
+      "fr": "Français",
+      "en": "English",
+      "vi": "Tiếng Việt",
+      "de": "Deutsch",
+      "tr": "Türkçe",
+      "ko": "한국어",
+      "zh-cn": "简体中文",
+      "es": "Español",
+      "th": "ไทย",
+      "cs": "Čeština",
+      "pl": "Polski"
+    },
+    "achievement_sections": {
+      "memorial": {
+        "name": "Памятные знаки",
+        "order": 4
+      },
+      "group": {
+        "name": "Групповые награды",
+        "order": 3
+      },
+      "battle": {
+        "name": "Герои битвы",
+        "order": 0
+      },
+      "action": {
+        "name": "Особые",
+        "order": 6
+      },
+      "epic": {
+        "name": "Эпические медали",
+        "order": 2
+      },
+      "class": {
+        "name": "Этапные награды",
+        "order": 5
+      },
+      "special": {
+        "name": "Почётные звания",
+        "order": 1
+      }
+    },
+    "vehicle_types": {
+      "heavyTank": "Тяжёлый танк",
+      "AT-SPG": "ПТ-САУ",
+      "mediumTank": "Средний танк",
+      "lightTank": "Легкий танк",
+      "SPG": "САУ"
+    },
+    "vehicle_nations": {
+      "usa": "США",
+      "czech": "Чехословакия",
+      "france": "Франция",
+      "ussr": "СССР",
+      "china": "Китай",
+      "uk": "Великобритания",
+      "japan": "Япония",
+      "germany": "Германия"
+    },
+    "game_version": "9.14"
+  }
+}
