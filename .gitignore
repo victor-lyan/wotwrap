@@ -1,5 +1,3 @@
-phpunit.xml
-phpunit.php
 composer.lock
 vendor/
 .idea

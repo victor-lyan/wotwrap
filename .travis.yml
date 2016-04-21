@@ -14,4 +14,4 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - php vendor/bin/phpunit -c phpunit.xml
+  - php vendor/bin/phpunit --coverage-clover build/logs/clover.xml
