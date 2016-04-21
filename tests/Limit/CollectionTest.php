@@ -52,4 +52,17 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $hit = $collection->hitLimits('na');
         $this->assertTrue($hit);
     }
+
+    public function testHitLimitMultipleFail()
+    {
+        $limit1 = new Limit;
+        $limit1->setRate(7, 2, 'na');
+        $limit2 = new Limit;
+        $limit2->setRate(3, 2, 'na');
+        $collection = new Collection;
+        $collection->addLimit($limit1);
+        $collection->addLimit($limit2);
+        $hit = $collection->hitLimits('na', 4);
+        $this->assertFalse($hit);
+    }
 }
