@@ -65,4 +65,54 @@ class CollectionTest extends PHPUnit_Framework_TestCase
         $hit = $collection->hitLimits('na', 4);
         $this->assertFalse($hit);
     }
+
+    public function testRemainingHits()
+    {
+        $limit = new Limit;
+        $limit->setRate(10, 3, 'na');
+        $collection = new Collection;
+        $collection->addLimit($limit);
+        $collection->hitLimits('na', 2);
+        $this->assertEquals(8, $collection->remainingHits());
+    }
+
+    public function testRemainingHitsMultiple()
+    {
+        $limit1 = new Limit;
+        $limit1->setRate(25, 10, 'na');
+        $limit2 = new Limit;
+        $limit2->setRate(2, 5, 'na');
+        $collection = new Collection;
+        $collection->addLimit($limit1);
+        $collection->addLimit($limit2);
+        $collection->hitLimits('na', 1);
+        $this->assertEquals(1, $collection->remainingHits());
+    }
+
+    public function testRemainingHitsMultipleRegions()
+    {
+        $limit1 = new Limit;
+        $limit1->setRate(25, 10, 'eu');
+        $limit2 = new Limit;
+        $limit2->setRate(20, 5, 'na');
+        $collection = new Collection;
+        $collection->addLimit($limit1);
+        $collection->addLimit($limit2);
+        $collection->hitLimits('eu', 10);
+        $this->assertEquals(15, $collection->remainingHits());
+    }
+
+    public function testGetLimits()
+    {
+        $limit1 = new Limit;
+        $limit1->setRate(25, 10, 'na');
+        $limit2 = new Limit;
+        $limit2->setRate(2, 5, 'na');
+        $collection = new Collection;
+        $collection->addLimit($limit1);
+        $collection->addLimit($limit2);
+
+        $limits = $collection->getLimits();
+        $this->assertEquals(2, count($limits));
+    }
 }
