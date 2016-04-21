@@ -2,6 +2,7 @@
 namespace WotWrap;
 
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\HandlerStack;
 use WotWrap\Exception\BaseUrlException;
 use WotWrap\Response;
 
@@ -44,6 +45,12 @@ class Client implements ClientInterface
     public function setTimeout($seconds)
     {
         $this->timeout = floatval($seconds);
+    }
+    
+    public function addMock($mock)
+    {
+        $handler = HandlerStack::create($mock);
+        $this->guzzle = new Guzzle(['handler' => $handler]);
     }
 
     /**

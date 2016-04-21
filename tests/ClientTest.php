@@ -1,6 +1,8 @@
 <?php
 
 use Mockery as m;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
 
 class ClientTest extends PHPUnit_Framework_TestCase
 {
@@ -9,14 +11,18 @@ class ClientTest extends PHPUnit_Framework_TestCase
         m::close();
     }
     
-    /*public function testRequest()
+    public function testRequest()
     {
-        $response = new Guzzle\Http\Message\Response(200, ['X-Foo' => 'Bar']);
-        $response->setBody(GuzzleHttp\Stream\Stream::factory('foo'));
-        $mock = new GuzzleHttp\Subscriber\Mock([
-            $response,
+        $mock = new MockHandler([
+            new Response(200, ['X-Foo' => 'Bar'], '{"status": "ok"}')
         ]);
-    }*/
+
+        $client = new WotWrap\Client;
+        $client->addMock($mock);
+        $response = $client->request('test', []);
+        $this->assertEquals('ok', $response->getDecodedContent()['status']);
+        $this->assertEquals(200, $response->getCode());
+    }
 
     /**
      * @expectedException WotWrap\Exception\BaseUrlException
