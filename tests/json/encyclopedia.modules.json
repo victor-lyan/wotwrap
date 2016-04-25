@@ -1,0 +1,548 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 54
+  },
+  "data": {
+    "68": {
+      "name": "75 mm SA49",
+      "weight": 1520,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 35640,
+      "tier": 5,
+      "module_id": 68,
+      "type": "vehicleGun"
+    },
+    "324": {
+      "name": "75 mm SA50",
+      "weight": 1740,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 64200,
+      "tier": 6,
+      "module_id": 324,
+      "type": "vehicleGun"
+    },
+    "580": {
+      "name": "47 mm SA34",
+      "weight": 90,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 2400,
+      "tier": 2,
+      "module_id": 580,
+      "type": "vehicleGun"
+    },
+    "836": {
+      "name": "47 mm SA35",
+      "weight": 100,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 3250,
+      "tier": 3,
+      "module_id": 836,
+      "type": "vehicleGun"
+    },
+    "1092": {
+      "name": "25 mm Canon Raccourci mle. 1934",
+      "weight": 71,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 2320,
+      "tier": 2,
+      "module_id": 1092,
+      "type": "vehicleGun"
+    },
+    "1348": {
+      "name": "47 mm SA37",
+      "weight": 100,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 4750,
+      "tier": 3,
+      "module_id": 1348,
+      "type": "vehicleGun"
+    },
+    "1604": {
+      "name": "37 mm APX SA18",
+      "weight": 100,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 0,
+      "tier": 1,
+      "module_id": 1604,
+      "type": "vehicleGun"
+    },
+    "1860": {
+      "name": "13.2 mm Hotchkiss mle. 1930",
+      "weight": 70,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 1500,
+      "tier": 1,
+      "module_id": 1860,
+      "type": "vehicleGun"
+    },
+    "2116": {
+      "name": "75 mm Blockhaus Schneider",
+      "weight": 210,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 2830,
+      "tier": 2,
+      "module_id": 2116,
+      "type": "vehicleGun"
+    },
+    "2372": {
+      "name": "37 mm SA38",
+      "weight": 70,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 1890,
+      "tier": 2,
+      "module_id": 2372,
+      "type": "vehicleGun"
+    },
+    "2884": {
+      "name": "10,5 cm le.F.H. 18 L/28",
+      "weight": 2300,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 40110,
+      "tier": 5,
+      "module_id": 2884,
+      "type": "vehicleGun"
+    },
+    "3140": {
+      "name": "7,5 cm Pak 40/2",
+      "weight": 1520,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 28900,
+      "tier": 4,
+      "module_id": 3140,
+      "type": "vehicleGun"
+    },
+    "3396": {
+      "name": "76 mm Gun M1A1",
+      "weight": 1567,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 50330,
+      "tier": 6,
+      "module_id": 3396,
+      "type": "vehicleGun"
+    },
+    "3652": {
+      "name": "90 mm DCA 30",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 64000,
+      "tier": 7,
+      "module_id": 3652,
+      "type": "vehicleGun"
+    },
+    "3908": {
+      "name": "105 mm Canon 13TR",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 94350,
+      "tier": 7,
+      "module_id": 3908,
+      "type": "vehicleGun"
+    },
+    "4164": {
+      "name": "90 mm F3",
+      "weight": 2200,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 87000,
+      "tier": 7,
+      "module_id": 4164,
+      "type": "vehicleGun"
+    },
+    "4420": {
+      "name": "75 mm SA32",
+      "weight": 1520,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 10360,
+      "tier": 4,
+      "module_id": 4420,
+      "type": "vehicleGun"
+    },
+    "4676": {
+      "name": "90 mm DCA 45",
+      "weight": 2750,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 121250,
+      "tier": 8,
+      "module_id": 4676,
+      "type": "vehicleGun"
+    },
+    "4932": {
+      "name": "100 mm SA47",
+      "weight": 3000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 127550,
+      "tier": 8,
+      "module_id": 4932,
+      "type": "vehicleGun"
+    },
+    "5188": {
+      "name": "105 mm court mle. 1935 B",
+      "weight": 355,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 15100,
+      "tier": 3,
+      "module_id": 5188,
+      "type": "vehicleGun"
+    },
+    "5444": {
+      "name": "105 mm court mle. 1934 S",
+      "weight": 450,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 37700,
+      "tier": 4,
+      "module_id": 5444,
+      "type": "vehicleGun"
+    },
+    "5700": {
+      "name": "120 mm SA46",
+      "weight": 3580,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 339000,
+      "tier": 10,
+      "module_id": 5700,
+      "type": "vehicleGun"
+    },
+    "5956": {
+      "name": "105 mm obusier mle. 1950",
+      "weight": 550,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 52000,
+      "tier": 5,
+      "module_id": 5956,
+      "type": "vehicleGun"
+    },
+    "6468": {
+      "name": "75 mm SA44",
+      "weight": 1400,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 27000,
+      "tier": 5,
+      "module_id": 6468,
+      "type": "vehicleGun"
+    },
+    "6724": {
+      "name": "Obusier de 155 mm C mle. 1917",
+      "weight": 1220,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 44920,
+      "tier": 5,
+      "module_id": 6724,
+      "type": "vehicleGun"
+    },
+    "6980": {
+      "name": "Canon de 155 mm de 33 calibres",
+      "weight": 2675,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 65000,
+      "tier": 6,
+      "module_id": 6980,
+      "type": "vehicleGun"
+    },
+    "7236": {
+      "name": "47 mm SA-L mle. 1937",
+      "weight": 100,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 8400,
+      "tier": 3,
+      "module_id": 7236,
+      "type": "vehicleGun"
+    },
+    "7492": {
+      "name": "6-pdr AT Gun Mk. IV",
+      "weight": 450,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 25000,
+      "tier": 4,
+      "module_id": 7492,
+      "type": "vehicleGun"
+    },
+    "8004": {
+      "name": "Obusier de 155 mm mle. 1950",
+      "weight": 2675,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 96000,
+      "tier": 7,
+      "module_id": 8004,
+      "type": "vehicleGun"
+    },
+    "8260": {
+      "name": "Canon de 155 mm mle. 1917 G.P.F.",
+      "weight": 3989,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 125000,
+      "tier": 8,
+      "module_id": 8260,
+      "type": "vehicleGun"
+    },
+    "8772": {
+      "name": "25 mm AC SA-L mle. 1937",
+      "weight": 70,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 3000,
+      "tier": 2,
+      "module_id": 8772,
+      "type": "vehicleGun"
+    },
+    "10308": {
+      "name": "75 mm APX mle. 1938",
+      "weight": 1020,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 22360,
+      "tier": 3,
+      "module_id": 10308,
+      "type": "vehicleGun"
+    },
+    "10564": {
+      "name": "75 mm AC SA44",
+      "weight": 1400,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 27000,
+      "tier": 5,
+      "module_id": 10564,
+      "type": "vehicleGun"
+    },
+    "10820": {
+      "name": "17-pdr AT Gun Mk. II",
+      "weight": 1640,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 45000,
+      "tier": 6,
+      "module_id": 10820,
+      "type": "vehicleGun"
+    },
+    "11076": {
+      "name": "90 mm AC canon DCA 30",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 64000,
+      "tier": 7,
+      "module_id": 11076,
+      "type": "vehicleGun"
+    },
+    "11332": {
+      "name": "90 mm AC DCA 45",
+      "weight": 2750,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 121250,
+      "tier": 8,
+      "module_id": 11332,
+      "type": "vehicleGun"
+    },
+    "11588": {
+      "name": "100 mm AC SA47",
+      "weight": 3000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 127550,
+      "tier": 8,
+      "module_id": 11588,
+      "type": "vehicleGun"
+    },
+    "12100": {
+      "name": "120 mm AC SA46",
+      "weight": 3580,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 339000,
+      "tier": 10,
+      "module_id": 12100,
+      "type": "vehicleGun"
+    },
+    "12356": {
+      "name": "105 mm AC mle. 1930 S",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 60000,
+      "tier": 6,
+      "module_id": 12356,
+      "type": "vehicleGun"
+    },
+    "12612": {
+      "name": "Canon de 155 mm",
+      "weight": 4352,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 225000,
+      "tier": 9,
+      "module_id": 12612,
+      "type": "vehicleGun"
+    },
+    "13380": {
+      "name": "105 mm AC court mle. 1934 S",
+      "weight": 1700,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 40700,
+      "tier": 5,
+      "module_id": 13380,
+      "type": "vehicleGun"
+    },
+    "13636": {
+      "name": "105 mm mle. 57 (D. 1504)",
+      "weight": 3000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 325000,
+      "tier": 10,
+      "module_id": 13636,
+      "type": "vehicleGun"
+    },
+    "14148": {
+      "name": "25 mm automatique mle. 1936",
+      "weight": 70,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 6500,
+      "tier": 2,
+      "module_id": 14148,
+      "type": "vehicleGun"
+    },
+    "14916": {
+      "name": "155 mm AC SA58",
+      "weight": 5000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 375000,
+      "tier": 10,
+      "module_id": 14916,
+      "type": "vehicleGun"
+    },
+    "15172": {
+      "name": "90 mm D. 915",
+      "weight": 1560,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 61000,
+      "tier": 6,
+      "module_id": 15172,
+      "type": "vehicleGun"
+    },
+    "15428": {
+      "name": "90 mm DCA 45",
+      "weight": 2750,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 121250,
+      "tier": 8,
+      "module_id": 15428,
+      "type": "vehicleGun"
+    },
+    "15684": {
+      "name": "105 mm D.E.F.A. 4767 modifié",
+      "weight": 490,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 28000,
+      "tier": 4,
+      "module_id": 15684,
+      "type": "vehicleGun"
+    },
+    "16196": {
+      "name": "57 mm L/100",
+      "weight": 1500,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 60000,
+      "tier": 6,
+      "module_id": 16196,
+      "type": "vehicleGun"
+    },
+    "16452": {
+      "name": "90 mm AC DCA 45",
+      "weight": 2750,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 121250,
+      "tier": 8,
+      "module_id": 16452,
+      "type": "vehicleGun"
+    },
+    "16964": {
+      "name": "105 mm mle. F1",
+      "weight": 3000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 290000,
+      "tier": 10,
+      "module_id": 16964,
+      "type": "vehicleGun"
+    },
+    "17220": {
+      "name": "47 mm SA37 amélioré",
+      "weight": 100,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 27500,
+      "tier": 4,
+      "module_id": 17220,
+      "type": "vehicleGun"
+    },
+    "17476": {
+      "name": "105 mm court mle. 1934",
+      "weight": 1700,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 40700,
+      "tier": 5,
+      "module_id": 17476,
+      "type": "vehicleGun"
+    },
+    "17988": {
+      "name": "105 mm D1504 L/51",
+      "weight": 2500,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 120000,
+      "tier": 8,
+      "module_id": 17988,
+      "type": "vehicleGun"
+    },
+    "18756": {
+      "name": "100 mm SA47",
+      "weight": 3000,
+      "image": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "france",
+      "price_credit": 127550,
+      "tier": 8,
+      "module_id": 18756,
+      "type": "vehicleGun"
+    }
+  }
+}

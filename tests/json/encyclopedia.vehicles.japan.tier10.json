@@ -1,0 +1,563 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 2
+  },
+  "data": {
+    "3681": {
+      "radios": [
+        2663
+      ],
+      "is_premium": false,
+      "tag": "ST_B1",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/small/japan-ST_B1.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/contour/japan-ST_B1.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/japan-ST_B1.png"
+      },
+      "tank_id": 3681,
+      "suspensions": [
+        7266
+      ],
+      "short_name": "STB-1",
+      "engines": [
+        4709
+      ],
+      "crew": [
+        {
+          "roles": {
+            "commander": "командир экипажа",
+            "radioman": "радист"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "mediumTank",
+      "guns": [
+        5732
+      ],
+      "description": "В начале 60-х годов компания Mitsubishi начала разработку нового танка, отвечавшего всем требованиям к вооружению и защите. Первые два прототипа STB-1 были выпущены в сентябре 1969 года для ходовых испытаний. В 1970 году прототипы были продемонстрированы прессе и приняли участие\nв военном параде.",
+      "provisions": [
+        4859,
+        12795,
+        9211,
+        1275,
+        26107,
+        26363,
+        7419,
+        6139,
+        14843,
+        6651,
+        1019,
+        9979,
+        15355,
+        251,
+        14331,
+        11771,
+        1531,
+        507,
+        12283,
+        4347,
+        763,
+        8699,
+        6649,
+        6905,
+        3065,
+        7417,
+        7929,
+        249,
+        761,
+        1785,
+        1529,
+        5625,
+        1273,
+        4857
+      ],
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "2663": {
+          "name": "Type 67",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 55000,
+          "module_id": 2663,
+          "type": "vehicleRadio"
+        },
+        "4709": {
+          "name": "Mitsubishi 10ZF21WT",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 132000,
+          "module_id": 4709,
+          "type": "vehicleEngine"
+        },
+        "5732": {
+          "name": "105 mm Rifled Gun",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 290000,
+          "module_id": 5732,
+          "type": "vehicleGun"
+        },
+        "6755": {
+          "name": "STB-1",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 6755,
+          "type": "vehicleTurret"
+        },
+        "7266": {
+          "name": "STB-1",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 7266,
+          "type": "vehicleChassis"
+        }
+      },
+      "nation": "japan",
+      "tier": 10,
+      "prices_xp": {
+        "3425": 255000
+      },
+      "is_gift": false,
+      "name": "STB-1",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Mitsubishi 10ZF21WT",
+          "weight": 2200,
+          "power": 750,
+          "tag": "_Mitsubishi_10ZF21WT",
+          "fire_chance": 0.12,
+          "tier": 10
+        },
+        "max_ammo": 50,
+        "weight": 37400,
+        "armor": {
+          "turret": {
+            "front": 132,
+            "sides": 132,
+            "rear": 37
+          },
+          "hull": {
+            "front": 110,
+            "sides": 35,
+            "rear": 25
+          }
+        },
+        "hp": 1950,
+        "modules": {
+          "gun_id": 5732,
+          "suspension_id": 7266,
+          "radio_id": 2663,
+          "engine_id": 4709,
+          "turret_id": 6755
+        },
+        "gun": {
+          "move_down_arc": 10,
+          "caliber": 105,
+          "name": "105 mm Rifled Gun",
+          "weight": 1150,
+          "move_up_arc": 20,
+          "fire_rate": 7.5,
+          "dispersion": 0.36,
+          "tag": "_105mm_Rifled_Gun",
+          "traverse_speed": 35,
+          "reload_time": 7.5,
+          "tier": 10,
+          "aim_time": 2.3
+        },
+        "turret": {
+          "name": "STB-1",
+          "weight": 9000,
+          "view_range": 410,
+          "traverse_left_arc": 180,
+          "hp": 390,
+          "tag": "Turret_1_ST_B1",
+          "traverse_speed": 42,
+          "tier": 10,
+          "traverse_right_arc": 180
+        },
+        "hull_weight": 11880,
+        "radio": {
+          "tier": 10,
+          "tag": "_Type67",
+          "weight": 370,
+          "name": "Type 67",
+          "signal_range": 750
+        },
+        "ammo": [
+          {
+            "type": "ARMOR_PIERCING_CR",
+            "penetration": [
+              194,
+              258,
+              323
+            ],
+            "damage": [
+              293,
+              390,
+              488
+            ]
+          },
+          {
+            "type": "HOLLOW_CHARGE",
+            "penetration": [
+              248,
+              330,
+              413
+            ],
+            "damage": [
+              293,
+              390,
+              488
+            ]
+          },
+          {
+            "type": "HIGH_EXPLOSIVE",
+            "penetration": [
+              40,
+              53,
+              66
+            ],
+            "damage": [
+              360,
+              480,
+              600
+            ]
+          }
+        ],
+        "speed_forward": 53,
+        "hull_hp": 1560,
+        "suspension": {
+          "name": "STB-1",
+          "weight": 12500,
+          "load_limit": 40000,
+          "tag": "Chassis_ST_B1",
+          "traverse_speed": 52,
+          "tier": 10
+        },
+        "speed_backward": 20,
+        "max_weight": 40000
+      },
+      "turrets": [
+        6755
+      ]
+    },
+    "3937": {
+      "radios": [
+        3687
+      ],
+      "is_premium": false,
+      "tag": "J20_Type_2605",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/small/japan-J20_Type_2605.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/contour/japan-J20_Type_2605.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.40.0/wot/encyclopedia/vehicle/japan-J20_Type_2605.png"
+      },
+      "tank_id": 3937,
+      "suspensions": [
+        8034
+      ],
+      "short_name": "Type 5 Heavy",
+      "engines": [
+        7781
+      ],
+      "crew": [
+        {
+          "roles": {
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "radioman": "радист"
+          },
+          "member_id": "radioman"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        6756
+      ],
+      "description": "Type 5, известный также как Type 2605 — один из вариантов сверхтяжёлого танка O-I, разработанного в годы Второй мировой войны. Основными задачами танка были прорыв укреплённых полос противника и береговая оборона.",
+      "provisions": [
+        4859,
+        12795,
+        1019,
+        1275,
+        1531,
+        26363,
+        7419,
+        6139,
+        26107,
+        14843,
+        6651,
+        9979,
+        15355,
+        4347,
+        14331,
+        11771,
+        9211,
+        12283,
+        251,
+        763,
+        507,
+        8699,
+        6649,
+        7161,
+        3321,
+        5881,
+        8185,
+        249,
+        7417,
+        5113,
+        1273,
+        1785,
+        1529,
+        11001
+      ],
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "3687": {
+          "name": "Type 3 Ko",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 54000,
+          "module_id": 3687,
+          "type": "vehicleRadio"
+        },
+        "6756": {
+          "name": "14 cm/50 3rd Year Type",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 330000,
+          "module_id": 6756,
+          "type": "vehicleGun"
+        },
+        "7523": {
+          "name": "Type 5 Heavy",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 7523,
+          "type": "vehicleTurret"
+        },
+        "7781": {
+          "name": "2x Kawasaki Type 98 V-12 1200 Kai",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 132000,
+          "module_id": 7781,
+          "type": "vehicleEngine"
+        },
+        "8034": {
+          "name": "Type 5 Heavy",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 8034,
+          "type": "vehicleChassis"
+        }
+      },
+      "nation": "japan",
+      "tier": 10,
+      "prices_xp": {
+        "4193": 257560
+      },
+      "is_gift": false,
+      "name": "Type 5 Heavy",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "2x Kawasaki Type 98 V-12 1200 Kai",
+          "weight": 1020,
+          "power": 1200,
+          "tag": "_Type98_V12_x2_1200_Kai",
+          "fire_chance": 0.2,
+          "tier": 10
+        },
+        "max_ammo": 60,
+        "weight": 150000,
+        "armor": {
+          "turret": {
+            "front": 260,
+            "sides": 210,
+            "rear": 200
+          },
+          "hull": {
+            "front": 260,
+            "sides": 140,
+            "rear": 150
+          }
+        },
+        "hp": 2800,
+        "modules": {
+          "gun_id": 6756,
+          "suspension_id": 8034,
+          "radio_id": 3687,
+          "engine_id": 7781,
+          "turret_id": 7523
+        },
+        "gun": {
+          "move_down_arc": 4,
+          "caliber": 140,
+          "name": "14 cm/50 3rd Year Type",
+          "weight": 5600,
+          "move_up_arc": 12,
+          "fire_rate": 3.39,
+          "dispersion": 0.4,
+          "tag": "_140mm_50_3rd_Year_Type",
+          "traverse_speed": 26,
+          "reload_time": 13.5,
+          "tier": 10,
+          "aim_time": 2.5
+        },
+        "turret": {
+          "name": "Type 5 Heavy",
+          "weight": 36000,
+          "view_range": 400,
+          "traverse_left_arc": 180,
+          "hp": 560,
+          "tag": "Turret_1_J20_Type_2605",
+          "traverse_speed": 18,
+          "tier": 10,
+          "traverse_right_arc": 180
+        },
+        "hull_weight": 66520,
+        "radio": {
+          "tier": 10,
+          "tag": "_Type3_Ko_notInShop",
+          "weight": 560,
+          "name": "Type 3 Ko",
+          "signal_range": 750
+        },
+        "ammo": [
+          {
+            "type": "ARMOR_PIERCING",
+            "penetration": [
+              187,
+              249,
+              311
+            ],
+            "damage": [
+              450,
+              600,
+              750
+            ]
+          },
+          {
+            "type": "ARMOR_PIERCING",
+            "penetration": [
+              212,
+              282,
+              353
+            ],
+            "damage": [
+              450,
+              600,
+              750
+            ]
+          },
+          {
+            "type": "HIGH_EXPLOSIVE",
+            "penetration": [
+              53,
+              70,
+              88
+            ],
+            "damage": [
+              578,
+              770,
+              963
+            ]
+          }
+        ],
+        "speed_forward": 25,
+        "hull_hp": 2240,
+        "suspension": {
+          "name": "Type 5 Heavy",
+          "weight": 40000,
+          "load_limit": 160000,
+          "tag": "Chassis_J20_Type_2605",
+          "traverse_speed": 22,
+          "tier": 10
+        },
+        "speed_backward": 10,
+        "max_weight": 160000
+      },
+      "turrets": [
+        7523
+      ]
+    }
+  }
+}

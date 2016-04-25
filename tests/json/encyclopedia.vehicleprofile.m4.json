@@ -1,0 +1,128 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "1057": {
+      "engine": {
+        "name": "Wright Continental R-975EC2",
+        "power": 350,
+        "weight": 515,
+        "tag": "Wright_Continental_R-975EC2",
+        "fire_chance": 0.2,
+        "tier": 4
+      },
+      "max_ammo": 90,
+      "suspension": {
+        "name": "T41",
+        "weight": 8000,
+        "load_limit": 30000,
+        "tag": "T41",
+        "traverse_speed": 35,
+        "tier": 4
+      },
+      "weight": 29702,
+      "armor": {
+        "turret": {
+          "front": 76,
+          "sides": 51,
+          "rear": 51
+        },
+        "hull": {
+          "front": 51,
+          "sides": 38,
+          "rear": 38
+        }
+      },
+      "hp": 400,
+      "modules": {
+        "gun_id": 36,
+        "suspension_id": 2082,
+        "turret_id": 2083,
+        "radio_id": 2087,
+        "engine_id": 3109
+      },
+      "gun": {
+        "move_down_arc": 10,
+        "caliber": 75,
+        "name": "75 mm Gun M3",
+        "weight": 1437,
+        "move_up_arc": 25,
+        "fire_rate": 15.79,
+        "dispersion": 0.46,
+        "tag": "_75mm_Gun_M3_L37",
+        "traverse_speed": 40,
+        "reload_time": 3.81,
+        "tier": 4,
+        "aim_time": 2.1
+      },
+      "is_default": true,
+      "turret": {
+        "name": "D51066",
+        "weight": 4800,
+        "view_range": 330,
+        "hp": 80,
+        "tag": "D51066",
+        "traverse_speed": 39,
+        "traverse_right_arc": 180,
+        "tier": 4,
+        "traverse_left_arc": 180
+      },
+      "hull_weight": 14600,
+      "radio": {
+        "tier": 6,
+        "signal_range": 395,
+        "tag": "SCR_508",
+        "name": "SCR 508",
+        "weight": 100
+      },
+      "speed_forward": 48,
+      "hull_hp": 320,
+      "speed_backward": 18,
+      "tank_id": 1057,
+      "ammo": [
+        {
+          "penetration": [
+            69,
+            92,
+            115
+          ],
+          "type": "ARMOR_PIERCING",
+          "damage": [
+            83,
+            110,
+            138
+          ]
+        },
+        {
+          "penetration": [
+            95,
+            127,
+            159
+          ],
+          "type": "ARMOR_PIERCING_CR",
+          "damage": [
+            83,
+            110,
+            138
+          ]
+        },
+        {
+          "penetration": [
+            29,
+            38,
+            48
+          ],
+          "type": "HIGH_EXPLOSIVE",
+          "damage": [
+            131,
+            175,
+            219
+          ]
+        }
+      ],
+      "max_weight": 30000
+    }
+  }
+}

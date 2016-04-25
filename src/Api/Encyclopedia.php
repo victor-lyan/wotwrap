@@ -2,7 +2,7 @@
 namespace WotWrap\Api;
 
 use WotWrap\Dto;
-use WotWrap\Exception\RequiredParametersMissingException;
+use WotWrap\Exception\ParameterTypeMismatchException;
 
 class Encyclopedia extends AbstractApi
 {
@@ -29,16 +29,16 @@ class Encyclopedia extends AbstractApi
     /**
      * Retrieves technical information about the tank
      * 
-     * @param $tankId
+     * @param int $tankId
      * @param array $params
      * @return array
-     * @throws RequiredParametersMissingException
+     * @throws ParameterTypeMismatchException
      * @throws \WotWrap\Exception\CacheNotFoundException
      */
     public function vehicleprofile($tankId, $params = [])
     {
-        if (!is_int($tankId)) {
-            throw new RequiredParametersMissingException("Required parameter 'tankId' is missing.");
+        if (!is_int($tankId) && !(is_string($tankId) && ctype_digit($tankId))) {
+            throw new ParameterTypeMismatchException("Parameter 'tankId' type mismatch.");
         }
         
         $params['tank_id'] = $tankId;
@@ -134,5 +134,53 @@ class Encyclopedia extends AbstractApi
         }
 
         return $boosters;
+    }
+
+    /**
+     * Retrieves information about personal missions, operations and campaigns
+     * 
+     * @param array $params
+     * @return array
+     * @throws \WotWrap\Exception\CacheNotFoundException
+     */
+    public function personalMissions($params = [])
+    {
+        $array = $this->request('encyclopedia/personalmissions/', $params);
+        $missions = [];
+        foreach ($array['data'] as $campaign_id => $info) {
+            $missions[$campaign_id] = new Dto\Encyclopedia($info);
+        }
+
+        return $missions;
+    }
+
+    /**
+     * Retrieves informatin about tank modules
+     * 
+     * @param $type
+     * @param $nation
+     * @param array $params
+     * @return array
+     * @throws ParameterTypeMismatchException
+     * @throws \WotWrap\Exception\CacheNotFoundException
+     */
+    public function modules($type, $nation, $params = [])
+    {
+        if (!is_string($type)) {
+            throw new ParameterTypeMismatchException("Parameter 'type' type mismatch.");
+        }
+        if (!is_string($nation)) {
+            throw new ParameterTypeMismatchException("Parameter 'nation' type mismatch.");
+        }
+
+        $params['type'] = $type;
+        $params['nation'] = $nation;
+        $array = $this->request('encyclopedia/modules/', $params);
+        $modules = [];
+        foreach ($array['data'] as $module_id => $info) {
+            $modules[$module_id] = new Dto\Encyclopedia($info);
+        }
+
+        return $modules;
     }
 }

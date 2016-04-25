@@ -1,7 +1,7 @@
 <?php
 namespace WotWrap\Api;
 
-use WotWrap\Exception\RequiredParametersMissingException;
+use WotWrap\Exception\ParameterTypeMismatchException;
 use WotWrap\Dto;
 
 class Account extends AbstractApi
@@ -19,13 +19,13 @@ class Account extends AbstractApi
      * @param $name
      * @param array $params
      * @return array
-     * @throws RequiredParametersMissingException
+     * @throws ParameterTypeMismatchException
      * @throws \WotWrap\Exception\CacheNotFoundException
      */
     public function findByName($name, $params = [])
     {
         if (!is_string($name)) {
-            throw new RequiredParametersMissingException("Required parameter 'name' is missing.");
+            throw new ParameterTypeMismatchException("Parameter 'name' type mismatch.");
         }
         
         $params['search'] = htmlspecialchars($name);
@@ -42,13 +42,18 @@ class Account extends AbstractApi
     /**
      * Retrieves accounts personal information
      * 
-     * @param $identities
+     * @param mixed $identities
      * @param array $params
      * @return array
      * @throws \WotWrap\Exception\CacheNotFoundException
+     * @throws ParameterTypeMismatchException
      */
     public function info($identities, $params = [])
     {
+        if (!is_array($identities) && !is_int($identities) && !(is_string($identities) && ctype_digit($identities))) {
+            throw new ParameterTypeMismatchException("Parameter 'identities' type mismatch.");
+        }
+        
         $accountIds = $this->extractIds($identities);
         $accountIds = implode(',', $accountIds);
         
@@ -70,9 +75,14 @@ class Account extends AbstractApi
      * @param array $params
      * @return array
      * @throws \WotWrap\Exception\CacheNotFoundException
+     * @throws ParameterTypeMismatchException
      */
     public function tanks($identities, $params = [])
     {
+        if (!is_array($identities) && !is_int($identities) && !(is_string($identities) && ctype_digit($identities))) {
+            throw new ParameterTypeMismatchException("Parameter 'identities' type mismatch.");
+        }
+        
         $accountIds = $this->extractIds($identities);
         $accountIds = implode(',', $accountIds);
 
@@ -102,9 +112,14 @@ class Account extends AbstractApi
      * @param array $params
      * @return array
      * @throws \WotWrap\Exception\CacheNotFoundException
+     * @throws ParameterTypeMismatchException
      */
     public function achievements($identities, $params = [])
     {
+        if (!is_array($identities) && !is_int($identities) && !(is_string($identities) && ctype_digit($identities))) {
+            throw new ParameterTypeMismatchException("Parameter 'identities' type mismatch.");
+        }
+        
         $accountIds = $this->extractIds($identities);
         $accountIds = implode(',', $accountIds);
 

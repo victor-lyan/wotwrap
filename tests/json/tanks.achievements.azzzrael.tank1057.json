@@ -1,0 +1,68 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "11782434": [
+      {
+        "achievements": {
+          "medalCarius": 3,
+          "aimer": 1,
+          "invader": 1,
+          "armorPiercer": 16,
+          "medalKay": 3,
+          "duelist": 1,
+          "defender": 1,
+          "medalLeClerc": 3,
+          "supporter": 2,
+          "medalLehvaslaiho": 1,
+          "medalAbrams": 3,
+          "medalPoppel": 3,
+          "medalPascucci": 3,
+          "kamikaze": 1,
+          "sniper": 15,
+          "warrior": 9,
+          "titleSniper": 16,
+          "markOfMastery": 4,
+          "ironMan": 3,
+          "charmed": 1,
+          "fighter": 2,
+          "medalLavrinenko": 3,
+          "impenetrable": 1,
+          "sturdy": 4,
+          "handOfDeath": 5,
+          "bonecrusher": 11,
+          "shootToKill": 17,
+          "medalKnispel": 3
+        },
+        "series": {
+          "armorPiercer": 0,
+          "aimer": 0,
+          "titleSniper": 0,
+          "tacticalBreakthrough": 0,
+          "invincible": 0,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "diehard": 0,
+          "WFC2014": 0,
+          "handOfDeath": 0
+        },
+        "max_series": {
+          "armorPiercer": 16,
+          "aimer": 1,
+          "titleSniper": 16,
+          "tacticalBreakthrough": 0,
+          "invincible": 2,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "diehard": 7,
+          "WFC2014": 0,
+          "handOfDeath": 5
+        },
+        "account_id": 11782434,
+        "tank_id": 1057
+      }
+    ]
+  }
+}
