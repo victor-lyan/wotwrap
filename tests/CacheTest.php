@@ -9,7 +9,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->cache = m::mock('WotWrap\CacheInterface');
+        $this->cache = m::mock('WotWrap\Cache');
         $this->client = m::mock('WotWrap\Client');
     }
     

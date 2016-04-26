@@ -112,6 +112,10 @@ class AccountTest extends PHPUnit_Framework_TestCase
     public function testTanksByIdentities()
     {
         $this->client->shouldReceive('baseUrl')->twice();
+        $this->client->shouldReceive('setRequestType')->once()
+            ->with('POST');
+        $this->client->shouldReceive('setTimeout')->once()
+            ->with(10);
         $this->client->shouldReceive('request')
             ->once()
             ->with('account/list/', ['search' => 'Azzzrael', 'application_id' => 'id', 'type' => 'exact'])
@@ -125,7 +129,9 @@ class AccountTest extends PHPUnit_Framework_TestCase
         $api = new Api('id', $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael', ['type' => 'exact']);
-        $azzzraelInfo = $account->tanks($azzzrael, ['tank_id' => '1057,2583']);
+        
+        //let's also test setRequestType and setTimeout of AbstractApi
+        $azzzraelInfo = $account->setRequestType('POST')->setTimeout(10)->tanks($azzzrael, ['tank_id' => '1057,2583']);
         $this->assertEquals(354, $azzzraelInfo[11782434]->get(1057)['wins']);
     }
     
