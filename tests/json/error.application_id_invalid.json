@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "error": {
+    "field": "application_id",
+    "message": "INVALID_APPLICATION_ID",
+    "code": 407,
+    "value": "demo1"
+  }
+}

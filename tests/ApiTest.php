@@ -63,4 +63,34 @@ class ApiTest extends PHPUnit_Framework_TestCase
         $api->limit(5, 5, 'na');
         $this->assertEquals(1, count($api->getLimits()));
     }
+    
+    public function testSetRegion()
+    {
+        $api = new Api('id');
+        $resultSetRegion = $api->setRegion('na');
+        $this->assertTrue($resultSetRegion instanceof Api);
+    }
+
+    /**
+     * @expectedException WotWrap\Exception\InvalidRegionException 
+     */
+    public function testSetRegionInvalidRegion()
+    {
+        $api = new Api('id');
+        $api->setRegion('br');
+    }
+    
+    public function testSetTimeout()
+    {
+        $api = new Api('id');
+        $resultSetTimeout = $api->setTimeout(3.17);
+        $this->assertTrue($resultSetTimeout instanceof Api);
+    }
+    
+    public function testRemember()
+    {
+        $api = new Api('id');
+        $rememberResult = $api->remember(60);
+        $this->assertTrue($rememberResult instanceof Api);
+    }
 }

@@ -93,6 +93,21 @@ class AccountTest extends PHPUnit_Framework_TestCase
         $api = new Api('id', $this->client);
         $api->account()->info(true);
     }
+
+    /**
+     * @expectedException WotWrap\Response\Api407
+     */
+    public function testInfoInvalidApplicationId()
+    {
+        $this->client->shouldReceive('baseUrl')->once();
+        $this->client->shouldReceive('request')
+            ->once()
+            ->with('account/info/', ['account_id' => 11782434, 'application_id' => 'demo1'])
+            ->andReturn(new WotWrap\Response(file_get_contents('tests/json/error.application_id_invalid.json'), 200));
+
+        $api = new Api('demo1', $this->client);
+        $api->account()->info(11782434);
+    }
     
     public function testTanksByIdentities()
     {

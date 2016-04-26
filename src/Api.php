@@ -8,6 +8,7 @@ use WotWrap\Limit\Collection;
 use WotWrap\Limit\LimitInterface;
 use WotWrap\Exception\ApiClassNotFoundException;
 use WotWrap\Exception\NoIdException;
+use WotWrap\Exception\InvalidRegionException;
 
 
 /**
@@ -147,14 +148,18 @@ class Api {
 	}
 
 	/**
-	 * Set the region code to a valid string.
+	 * Set the region to be used in the requests
 	 *
 	 * @param string $region
 	 * @return $this
+	 * @throws InvalidRegionException
 	 * @chainable
 	 */
 	public function setRegion($region)
 	{
+		if (!in_array($region, ['ru', 'na', 'eu', 'kr', 'asia'])) {
+			throw new InvalidRegionException("Invalid region, please use one of these: ru, na, eu, kr, asia.");
+		}
 		$this->region = $region;
 		return $this;
 	}
@@ -215,7 +220,7 @@ class Api {
 	 * @param int $hits
 	 * @param int $seconds
 	 * @param string $region
-	 * @param Limit $limit
+	 * @param LimitInterface $limit
 	 * @throws NoValidLimitInterfaceException
 	 * @return $this
 	 * @chainable

@@ -18,10 +18,25 @@ class ClientTest extends PHPUnit_Framework_TestCase
         ]);
 
         $client = new WotWrap\Client;
+        $client->baseUrl('http://google.com');
+        $client->setTimeout(10);
         $client->addMock($mock);
         $response = $client->request('test', []);
         $this->assertEquals('ok', $response->getDecodedContent()['status']);
         $this->assertEquals(200, $response->getCode());
+    }
+    
+    public function testRequestPost()
+    {
+        $mock = new MockHandler([
+            new Response(200, ['X-Foo' => 'Bar'], '{"status": "ok"}')
+        ]);
+
+        $client = new WotWrap\Client;
+        $client->setRequestType('POST');
+        $client->addMock($mock);
+        $response = $client->request('test', []);
+        $this->assertEquals('ok', $response->getDecodedContent()['status']);
     }
 
     /**

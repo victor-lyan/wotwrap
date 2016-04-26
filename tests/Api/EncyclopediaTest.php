@@ -109,12 +109,12 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
         $this->client->shouldReceive('baseUrl')->once();
         $this->client->shouldReceive('request')
             ->once()
-            ->with('encyclopedia/provisions/', ['application_id' => 'id'])
-            ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.provisions.json'), 200));
+            ->with('encyclopedia/boosters/', ['application_id' => 'id'])
+            ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.boosters.json'), 200));
 
         $api = new Api('id', $this->client);
-        $provisions = $api->encyclopedia()->provisions();
-        $this->assertEquals(100, $provisions[249]->weight);
+        $boosters = $api->encyclopedia()->boosters();
+        $this->assertEquals(21600, $boosters[5001]->lifetime);
     }
 
     public function testPersonalMissions()
@@ -146,9 +146,18 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException WotWrap\Exception\ParameterTypeMismatchException
      */
-    public function testModulesParametersMismatch()
+    public function testModulesTypeParameterMismatch()
     {
         $api = new Api('id', $this->client);
-        $api->encyclopedia()->modules(22, true);
+        $api->encyclopedia()->modules(22, 'test');
+    }
+
+    /**
+     * @expectedException WotWrap\Exception\ParameterTypeMismatchException
+     */
+    public function testModulesNationParameterMismatch()
+    {
+        $api = new Api('id', $this->client);
+        $api->encyclopedia()->modules('test', 121);
     }
 }
