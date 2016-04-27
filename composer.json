@@ -2,7 +2,6 @@
     "name": "victor-lyan/wotwrap",
     "description": "A wrapper for the World of Tanks API.",
     "license": "MIT",
-    "version": "1.0.0",
     "require": {
         "php": ">=5.5",
         "guzzlehttp/guzzle": "~6.0"
