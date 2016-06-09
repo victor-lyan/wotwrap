@@ -1,11 +1,9 @@
 {
   "status": "ok",
   "meta": {
-    "count": 3
+    "count": 1
   },
   "data": {
-    "access_token": "c91999c155b495a694463b9eca7d1c99ea34cba0",
-    "account_id": 11782434,
-    "expires_at": 1462888073
+    "location": "https://ru.wargaming.net/id/openid/?openid.assoc_handle=%7BHMAC-SHA1%7D%7B57516172%7D%7BzIqBIw%3D%3D%7D&openid.ax.if_available=ext0%2Cext1%2Cext2%2Cext3&openid.ax.mode=fetch_request&openid.ax.type.ext0=http%3A%2F%2Faxschema.openid.wargaming.net%2Fidentity%2Fsso%2Fnotifications%2Fdisable&openid.ax.type.ext1=http%3A%2F%2Faxschema.openid.wargaming.net%2Fspa%2Fid&openid.ax.type.ext2=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffriendly&openid.ax.type.ext3=http%3A%2F%2Faxschema.openid.wargaming.net%2Fidentity%2Flanguage&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.realm=https%3A%2F%2Fapi.worldoftanks.ru%2F&openid.return_to=https%3A%2F%2Fapi.worldoftanks.ru%2Fid%2Fcomplete%2F%3Fredirect_uri%3Dhttp%253A%252F%252Fexample.com%252F%26application_id%3De3d2647f460233fcce8a92e8fa3aa93d%26expires_at%3D1466664536%26janrain_nonce%3D2016-06-09T06%253A48%253A56Zmo4bkO"
   }
 }

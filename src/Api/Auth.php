@@ -6,25 +6,19 @@ use WotWrap\Dto;
 class Auth extends AbstractApi
 {
     /**
-     * Login to the wargaming services and get an access_token 
+     * Returns a link to wargaming auth services 
      * 
      * @param $redirectUri
      * @param array $params
-     * @return Dto\Auth
+     * @return String
      * @throws \WotWrap\Exception\CacheNotFoundException
      */
     public function login($redirectUri, $params = [])
     {
-        if (isset($_GET['access_token']) && isset($_GET['expires_at'])) {
-            //we check access_token by calling prolongate service
-            return $this->prolongate($_GET['access_token'], $_GET['expires_at']);
-        }
-        
         $params['redirect_uri'] = $redirectUri;
         $params['nofollow'] = 1;
         $authArray = $this->request('auth/login/', $params);
-        $location = $authArray['data']['location'];
-        header("Location: $location");
+        return $authArray['data']['location'];
     }
 
     /**

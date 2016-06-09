@@ -37,6 +37,7 @@ class Region
      */
     public function getDomain()
     {
-        return sprintf($this->defaultDomain, $this->region);
+        $region = ($this->region == 'na') ? 'com' : $this->region;
+        return sprintf($this->defaultDomain, $region);
     }
 }
