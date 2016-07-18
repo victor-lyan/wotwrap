@@ -6,9 +6,12 @@ use WotWrap\Api;
 class AuthTest extends PHPUnit_Framework_TestCase
 {
     protected $client;
+
+    protected $applicationIds;
     
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->client = m::mock('WotWrap\Client');
     }
     
@@ -29,7 +32,7 @@ class AuthTest extends PHPUnit_Framework_TestCase
             ->once()
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/auth.login.json'), 200));
         
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $loginResult = $api->auth()->login('http://example.com');
         $this->assertContains('ru.wargaming.net', $loginResult);
     }

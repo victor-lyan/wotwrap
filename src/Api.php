@@ -27,6 +27,13 @@ class Api {
 	protected $region = 'ru';
 
 	/**
+	 * All regions list
+	 * 
+	 * @var array
+	 */
+	public $regionsList = [];
+
+	/**
 	 * The client used to connect with the WOT API.
 	 *
 	 * @var object
@@ -68,11 +75,11 @@ class Api {
 	protected $limits = null;
 
 	/**
-	 * This is the application id, very important.
+	 * This is the array with application ids for different regions
 	 *
 	 * @var string
 	 */
-	private $id;
+	private $ids;
 
 	/**
 	 * Protocol to be used in the queries (http or https)
@@ -84,15 +91,27 @@ class Api {
 	/**
 	 * Initiate the default client and application id.
 	 *
-	 * @param string $id
+	 * @param array $applicationIds
 	 * @param ClientInterface $client
 	 * @param string $protocol
 	 * @throws NoIdException
 	 */
-	public function __construct($id = null, ClientInterface $client = null, $protocol = 'https')
+	public function __construct($applicationIds = [], ClientInterface $client = null, $protocol = 'https')
 	{
-		if (is_null($id)) {
-			throw new NoIdException('We need an application id... it\'s very important!');
+		if (!is_array($applicationIds) || empty($applicationIds)) {
+			throw new NoIdException('Application Ids array parameter is missing');
+		}
+		
+		$this->regionsList = ['ru', 'na', 'eu', 'kr', 'asia'];
+		$newApplicationIds = [];
+		
+		//if some regions were not given an application id, use 'demo' application id for them
+		foreach ($this->regionsList as $region) {
+			if (array_key_exists($region, $applicationIds)) {
+				$newApplicationIds[$region] = $applicationIds[$region];
+			} else {
+				$newApplicationIds[$region] = 'demo';
+			}
 		}
 
 		if (is_null($client)) {
@@ -101,7 +120,7 @@ class Api {
 		}
 		$this->client = $client;
 
-		$this->id = $id;
+		$this->ids = $newApplicationIds;
 		
 		$this->protocol = $protocol;
 
@@ -135,10 +154,10 @@ class Api {
 			throw new ApiClassNotFoundException('The api class "'.$className.'" was not found.');
 		}
 
-		$api->setId($this->id)
-				->setRegion($this->region, $this->protocol)
-				->setTimeout($this->timeout)
-				->setCacheOnly($this->cacheOnly);
+		$api->setId($this->ids[$this->region])
+			->setRegion($this->region, $this->protocol)
+			->setTimeout($this->timeout)
+			->setCacheOnly($this->cacheOnly);
 
 		if ($this->cache instanceof CacheInterface) {
 			$api->remember($this->remember, $this->cache);
@@ -157,7 +176,7 @@ class Api {
 	 */
 	public function setRegion($region)
 	{
-		if (!in_array($region, ['ru', 'na', 'eu', 'kr', 'asia'])) {
+		if (!in_array($region, $this->regionsList)) {
 			throw new InvalidRegionException("Invalid region, please use one of these: ru, na, eu, kr, asia.");
 		}
 		$this->region = $region;
@@ -236,7 +255,7 @@ class Api {
 		}
 
 		if ($region == 'all') {
-			foreach (['ru', 'eu', 'na', 'kr', 'asia',] as $region) {
+			foreach ($this->regionsList as $region) {
 				$newLimit = $limit->newInstance();
 				$newLimit->setRate($hits, $seconds, $region);
 				$this->collection->addLimit($newLimit);

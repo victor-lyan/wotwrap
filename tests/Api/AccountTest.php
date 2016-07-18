@@ -7,8 +7,11 @@ class AccountTest extends PHPUnit_Framework_TestCase
 {
     protected $client;
     
+    protected $applicationIds;
+    
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->client = m::mock('WotWrap\Client');
     }
     
@@ -25,7 +28,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/list/', ['search' => 'Azzzrael', 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.json'), 200));
         
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $azzzrael = $api->account()->findByName('Azzzrael');
         $this->assertEquals(11782434, $azzzrael[0]->account_id);
     }
@@ -38,7 +41,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/list/', ['search' => 'Azzzrael123', 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.notexisted.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $azzzrael = $api->account()->findByName('Azzzrael123');
         $this->assertTrue(count($azzzrael) == 0);
     }
@@ -48,7 +51,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
      */
     public function testFindByNameParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->account()->findByName(321);
     }
 
@@ -65,7 +68,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/info/', ['account_id' => 11782434, 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.info.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael');
         $azzzraelInfo = $account->info($azzzrael);
@@ -80,7 +83,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/info/', ['account_id' => 11782434, 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.info.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $azzzraelInfo = $api->account()->info(11782434);
         $this->assertEquals(10859, $azzzraelInfo[11782434]->statistics['all']['spotted']);
     }
@@ -90,7 +93,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
      */
     public function testInfoParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->account()->info(true);
     }
 
@@ -105,7 +108,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/info/', ['account_id' => 11782434, 'application_id' => 'demo1'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/error.application_id_invalid.json'), 200));
 
-        $api = new Api('demo1', $this->client);
+        $api = new Api(['ru' => 'demo1'], $this->client);
         $api->account()->info(11782434);
     }
     
@@ -126,7 +129,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/tanks/', ['account_id' => 11782434, 'application_id' => 'id', 'tank_id' => '1057,2583'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.tanks.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael', ['type' => 'exact']);
         
@@ -143,7 +146,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/tanks/', ['account_id' => 11782434, 'application_id' => 'id', 'tank_id' => '1057,2583'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.tanks.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzraelInfo = $account->tanks(11782434, ['tank_id' => '1057,2583']);
         $this->assertEquals(354, $azzzraelInfo[11782434]->get(1057)['wins']);
@@ -154,7 +157,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
      */
     public function testTanksParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->account()->tanks(true);
     }
     
@@ -171,7 +174,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/achievements/', ['account_id' => 11782434, 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.achievements.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael', ['type' => 'exact']);
         $azzzraelInfo = $account->achievements($azzzrael);
@@ -186,7 +189,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
             ->with('account/achievements/', ['account_id' => 11782434, 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.achievements.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzraelInfo = $account->achievements(11782434);
         $this->assertEquals(2, $azzzraelInfo[11782434]->achievements['medalCarius']);
@@ -197,7 +200,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
      */
     public function testAchievementsParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->account()->achievements('a203');
     }
 }

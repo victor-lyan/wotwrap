@@ -1,6 +1,7 @@
 <?php
 namespace WotWrap\Api;
 
+use WotWrap\Exception\InvalidRegionException;
 use WotWrap\Region;
 use WotWrap\ClientInterface;
 use WotWrap\Limit\Collection;
@@ -164,10 +165,15 @@ abstract class AbstractApi {
 	 * @param string $region
 	 * @param string $protocol
 	 * @return $this
+	 * @throws InvalidRegionException
 	 * @chainable
 	 */
-	public function setRegion($region, $protocol)
+	public function setRegion($region, $protocol = 'https')
 	{
+		if (!in_array($region, $this->api->regionsList)) {
+			throw new InvalidRegionException("Invalid region, please use one of these: ru, na, eu, kr, asia.");
+		}
+		
 		$this->region = new Region($region, $protocol);
 		return $this;
 	}

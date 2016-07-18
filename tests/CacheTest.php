@@ -7,8 +7,11 @@ class CacheTest extends PHPUnit_Framework_TestCase
     protected $cache;
     protected $client;
     
+    protected $applicationIds;
+    
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->cache = m::mock('WotWrap\Cache');
         $this->client = m::mock('WotWrap\Client');
     }
@@ -40,7 +43,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/info/', ['application_id' => 'id'])
             ->andReturn($encyclopediaInfo);
         
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $encyclopedia = $api->encyclopedia()->remember(60, $this->cache);
         $encyclopedia->info();
         $encyclopedia->info();
@@ -60,7 +63,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
             ->andReturn($encyclopediaInfo);
         $this->client->shouldReceive('baseUrl')->twice();
 
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $encyclopedia = $api->setCacheOnly()->remember(60, $this->cache)->encyclopedia();
         $encyclopedia->info();
         $encyclopedia->info();
@@ -80,7 +83,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
         $this->client->shouldReceive('baseUrl')
             ->once();
 
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $api->remember(null, $this->cache)->setCacheOnly();
         $enc = $api->encyclopedia()->info();
     }

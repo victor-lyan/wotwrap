@@ -7,8 +7,11 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
 {
     protected $client;
 
+    protected $applicationIds;
+
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->client = m::mock('WotWrap\Client');
     }
 
@@ -25,7 +28,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/vehicles/', ['nation' => 'japan', 'application_id' => 'id', 'tier' => 10])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.vehicles.japan.tier10.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $vehicles = $api->encyclopedia()->vehicles(['nation' => 'japan', 'tier' => 10]);
         $this->assertEquals("STB-1", $vehicles[3681]->short_name);
     }
@@ -38,7 +41,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/vehicleprofile/', ['tank_id' => 1057, 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.vehicleprofile.m4.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $vehicleProfile = $api->encyclopedia()->vehicleprofile(1057);
         $this->assertEquals(350, $vehicleProfile[1057]->engine['power']);
     }
@@ -48,7 +51,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
      */
     public function testVehicleProfileParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->encyclopedia()->vehicleprofile('a22');
     }
 
@@ -60,7 +63,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/achievements/', ['fields' => 'name', 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.achievements.onlynames.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $achievements = $api->encyclopedia()->achievements(['fields' => 'name']);
         $this->assertEquals('armorPiercer', $achievements['armorPiercer']->name);
     }
@@ -73,7 +76,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/info/', ['application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.info.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $info = $api->encyclopedia()->info();
         $this->assertEquals('9.14', $info->game_version);
     }
@@ -86,7 +89,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/arenas/', ['application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.arenas.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $arenas = $api->encyclopedia()->arenas();
         $this->assertEquals('summer', $arenas['11_murovanka']->camouflage_type);
     }
@@ -99,7 +102,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/provisions/', ['application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.provisions.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $provisions = $api->encyclopedia()->provisions();
         $this->assertEquals(100, $provisions[249]->weight);
     }
@@ -112,7 +115,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/boosters/', ['application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.boosters.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $boosters = $api->encyclopedia()->boosters();
         $this->assertEquals(21600, $boosters[5001]->lifetime);
     }
@@ -125,7 +128,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/personalmissions/', ['application_id' => 'id', 'operation_id' => 2])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.personalmissions.campaign2.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $missions = $api->encyclopedia()->personalMissions(['operation_id' => 2]);
         $this->assertEquals(15, $missions[2]->operations[5]['missions_in_set']);
     }
@@ -138,7 +141,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
             ->with('encyclopedia/modules/', ['application_id' => 'id', 'type' => 'vehicleGun', 'nation' => 'france'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.modules.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $missions = $api->encyclopedia()->modules('vehicleGun', 'france');
         $this->assertEquals(1520, $missions[68]->weight);
     }
@@ -148,7 +151,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
      */
     public function testModulesTypeParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->encyclopedia()->modules(22, 'test');
     }
 
@@ -157,7 +160,7 @@ class EncyclopediaTest extends PHPUnit_Framework_TestCase
      */
     public function testModulesNationParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->encyclopedia()->modules('test', 121);
     }
 }

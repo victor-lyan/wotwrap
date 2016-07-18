@@ -7,8 +7,11 @@ class TanksTest extends PHPUnit_Framework_TestCase
 {
     protected $client;
 
+    protected $applicationIds;
+
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->client = m::mock('WotWrap\Client');
     }
 
@@ -25,7 +28,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('tanks/stats/', ['tank_id' => 1057, 'application_id' => 'id', 'account_id' => 11782434])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/tanks.stats.azzzrael.tank1057.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $stats = $api->tanks()->stats(11782434, ['tank_id' => 1057]);
         $this->assertEquals(6, $stats[1057]->all['draws']);
     }
@@ -43,7 +46,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('tanks/stats/', ['account_id' => 11782434, 'application_id' => 'id', 'tank_id' => 1057])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/tanks.stats.azzzrael.tank1057.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael', ['type' => 'exact']);
         $stats = $api->tanks()->stats($azzzrael, ['tank_id' => 1057]);
@@ -55,7 +58,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
      */
     public function testStatsParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->tanks()->stats('a12303532', ['tank_id' => 1057]);
     }
     
@@ -67,7 +70,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('tanks/achievements/', ['tank_id' => 1057, 'application_id' => 'id', 'account_id' => 11782434])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/tanks.achievements.azzzrael.tank1057.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $achievements = $api->tanks()->achievements(11782434, ['tank_id' => 1057]);
         $this->assertEquals(9, $achievements[1057]->achievements['warrior']);
     }
@@ -85,7 +88,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('tanks/achievements/', ['account_id' => 11782434, 'application_id' => 'id', 'tank_id' => 1057])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/tanks.achievements.azzzrael.tank1057.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael', ['type' => 'exact']);
         $achievements = $api->tanks()->achievements($azzzrael, ['tank_id' => 1057]);
@@ -97,7 +100,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
      */
     public function testAchievementsParameterMismatch()
     {
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $api->tanks()->achievements('a12303532', ['tank_id' => 1057]);
     }
 
@@ -112,7 +115,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('account/list/', ['search' => 'Azzzrael', 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael');
         $api->tanks()->stats($azzzrael, ['tank_id' => 1057]);
@@ -129,7 +132,7 @@ class TanksTest extends PHPUnit_Framework_TestCase
             ->with('account/list/', ['search' => 'Azzzrael', 'application_id' => 'id'])
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/account.azzzrael.json'), 200));
 
-        $api = new Api('id', $this->client);
+        $api = new Api($this->applicationIds, $this->client);
         $account = $api->account();
         $azzzrael = $account->findByName('Azzzrael');
         $api->tanks()->achievements($azzzrael, ['tank_id' => 1057]);

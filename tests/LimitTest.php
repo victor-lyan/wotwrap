@@ -9,8 +9,11 @@ class LimitTest extends PHPUnit_Framework_TestCase
     protected $client;
     protected $response;
     
+    protected $applicationIds;
+    
     public function setUp()
     {
+        $this->applicationIds = ['ru' => 'id'];
         $this->limit1 = m::mock('WotWrap\Limit\LimitInterface');
         $this->limit2 = m::mock('WotWrap\Limit\LimitInterface');
         $this->client = m::mock('WotWrap\Client');
@@ -53,7 +56,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
                      ])->once()
                      ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.info.json'), 200));
 
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $api->limit(1, 10, 'ru', $this->limit1);
         $encyclopedia = $api->encyclopedia();
         $encyclopedia->info();
@@ -103,7 +106,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
             ])->twice()
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.info.json'), 200));
 
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $api->limit(5, 10, 'ru', $this->limit1);
         $api->limit(2, 5, 'ru', $this->limit2);
         $encyclopedia = $api->encyclopedia();
@@ -155,7 +158,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
             ])->once()
             ->andReturn(new WotWrap\Response(file_get_contents('tests/json/encyclopedia.info.json'), 200));
 
-        $api = new WotWrap\Api('id', $this->client);
+        $api = new WotWrap\Api($this->applicationIds, $this->client);
         $api->limit(10, 5, 'all', $this->limit1);
         $encyclopedia = $api->encyclopedia();
         $info = $encyclopedia->info();
