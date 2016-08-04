@@ -36,8 +36,10 @@ class Tanks extends AbstractApi
 
         $array = $this->request('tanks/stats/', $params);
         $stats = [];
-        foreach ($array['data'][$accountId] as $info) {
-            $stats[$info['tank_id']] = new Dto\Tanks($info);
+        if ($array['data'][$accountId] !== null && is_array($array['data'][$accountId])) {
+            foreach ($array['data'][$accountId] as $info) {
+                $stats[$info['tank_id']] = new Dto\Tanks($info);
+            }    
         }
 
         return $stats;
